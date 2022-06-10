@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class DogApplication {
@@ -8,12 +7,10 @@ public class DogApplication {
 
         //allow us to get user input
         Scanner input = new Scanner(System.in); //creates a scanner object
-        Random random = new Random();
-
         System.out.println("Who is the goodest boy ever? (Enter your dogs name)");
         String dogName = input.nextLine();
 
-        //create a new dog with needs class
+        //create a new dog with needs object
         DogNeeds dog = new DogNeeds(dogName);
 
         //instructions
@@ -152,7 +149,7 @@ public class DogApplication {
             }
             //enables dogs' needs change upon each selection
             dog.tick();
-        } while (select != 7);
+        } while (select != 7); //because 7 means quit
 
     }
 
@@ -167,7 +164,7 @@ public class DogApplication {
             System.out.println(">> Energy: " + dog.getEnergy());
     }
 
-    //method needed to make menu in console so user can take care of their dog
+    //method needed to print out game instructions
     public static void needsMenu(String dogName)
     {
         System.out.println(
